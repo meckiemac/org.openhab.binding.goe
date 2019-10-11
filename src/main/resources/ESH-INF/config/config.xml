@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-description:config-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
+		https://openhab.org/schemas/config-description-1.0.0.xsd">
+
+	
+	<config-description uri="thing-type:goe:httplocal">
+        <parameter-group name="network">
+            <label>Network</label>
+            <description>Network settings.</description>
+        </parameter-group>
+        <!-- 
+        <parameter name="serialNumber" type="text" required="true" groupName="network">
+            <label>Serial Number</label>
+            <description>Serial Number of the go-eCharger</description>
+        </parameter>
+         -->
+        <parameter name="ipAddress" type="text" required="true" groupName="network">
+            <label>Network Address</label>
+            <description>The IP or host name of the go-Charger</description>
+            <context>network-address</context>
+        </parameter>
+        <parameter name="port" type="integer" required="false" min="1" max="65335" groupName="network">
+            <label>The Http Port</label>
+            <description>Port for the go-eCharger, if different.</description>
+            <default>80</default>
+        </parameter>
+         <parameter name="refreshInterval" type="integer" required="false" min="10" groupName="network">
+            <label>The Status Refresh Interval</label>
+            <description>How often should the status be refreshed?</description>
+            <default>60</default>
+        </parameter>
+        <parameter name="refreshIntervalCharging" type="integer" required="false" min="5" groupName="network">
+            <label>The Status Refresh Interval</label>
+            <description>How often should the status be refreshed?</description>
+            <default>10</default>
+        </parameter>
+    </config-description>
+</config-description:config-descriptions>
+
+
+

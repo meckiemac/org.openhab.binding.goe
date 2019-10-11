@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="goe"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!--Go-eCharger Thing Types -->
+	<thing-type id="http-device">
+		<label>go-eCharger Home+ (HTTP)</label>
+		<description>This is the HTTP version of go-eCharger thing</description>
+		
+		<channels>
+		  <!-- Control Items -->
+		  <channel id="version" typeId="genericStringType">
+		      <label>version</label>
+		      <description>JSON Format</description>
+		  </channel>
+		  <channel typeId="genericNumberType" id="tme">
+		  	<label>tme</label>
+		  	<description>Current Charger Time</description></channel><channel id="rbc" typeId="genericNumberType">
+              <label>rbc</label>
+              <description>Reboot Counter</description>
+		  </channel>
+		  <channel typeId="genericNumberType" id="rbt">
+		  	<label>rbt</label>
+		  	<description>Uptime</description></channel>
+		  <channel typeId="genericNumberType" id="car">
+		  	<label>car</label>
+		  	<description>Car Signaling Status</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="amp">
+		  	<label>amp</label>
+		  	<description>Current Allowed Ampere</description></channel>
+		  <channel typeId="genericNumberType" id="err">
+		  	<label>err</label>
+		  	<description>Error</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="ast">
+		  	<label>ast</label>
+		  	<description>Access Control Type</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="alw">
+		  	<label>alw</label>
+		  	<description>Allow Charging</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="stp">
+		  	<label>stp</label>
+		  	<description>Automatic Stop</description></channel>
+		  <channel typeId="genericNumberType" id="cbl">
+		  	<label>cbl</label>
+		  	<description>Cable Ampere Coding</description></channel>
+		  <channel typeId="genericNumberType" id="pha">
+		  	<label>pha</label>
+		  	<description>Phase States</description></channel>
+		  <channel typeId="genericNumberType" id="tmp">
+		  	<label>tmp</label>
+		  	<description>Temperature</description></channel>
+		  <channel typeId="genericNumberType" id="dws">
+		  	<label>dws</label>
+		  	<description>Current Charged Energy</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="dwo">
+		  	<label>dwo</label>
+		  	<description>Stop Charging after 0.1kWh</description></channel>
+		  <channel typeId="genericNumberType" id="adi">
+		  	<label>adi</label>
+		  	<description>16Ampere Adapter</description></channel>
+		  <channel typeId="genericNumberType" id="uby">
+		  	<label>uby</label>
+		  	<description>Unlocked by Card Number</description></channel>
+		  <channel typeId="genericNumberType" id="eto">
+		  	<label>eto</label>
+		  	<description>Total Charged Energy</description></channel>
+		  <channel typeId="genericNumberType" id="wst">
+		  	<label>wst</label>
+		  	<description>WIFI Connection State</description></channel>
+		  <channel typeId="genericStringType" id="nrg">
+		  	<label>nrg - DO NOT USE!</label>
+		  	<description>Current Energy Levels</description></channel>
+		  <channel typeId="genericStringType" id="fwv">
+		  	<label>fwv</label>
+		  	<description>Firmware Version</description></channel>
+		  <channel typeId="genericStringType" id="sse">
+		  	<label>sse</label>
+		  	<description>Serial Number</description></channel>
+		  <channel typeId="genericStringTypeWritable" id="wss">
+		  	<label>wss</label>
+		  	<description>Wifi Client SSID</description></channel>
+		  <channel typeId="genericStringTypeWritable" id="wke">
+		  	<label>wke</label>
+		  	<description>Wifi Client Key/Password</description>
+		  </channel>
+		  <channel typeId="genericNumberTypeWritable" id="wen">
+		  	<label>wen</label>
+		  	<description>Wifi Client Enabled</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="tof">
+		  	<label>tof</label>
+		  	<description>Time Zone Offset</description></channel>
+		  <channel typeId="genericNumberTypeWritable" id="tds">
+            <label>tds</label>
+            <description>Daylight Saving Offset</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="lbr">
+            <label>lbr</label>
+            <description>Led Brightness</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="aho">
+            <label>aho</label>
+            <description>Minimum Hours to Charge</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="afi">
+            <label>afi</label>
+            <description>Time Until Charging must be finished</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="azo">
+            <label>azo</label>
+            <description>Awattar Price Zone</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="ama">
+            <label>ama</label>
+            <description>Absolut Maximum Ampere</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="al1">
+            <label>al1</label>
+            <description>Ampere Level for Butten Level 1</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="al2">
+            <label>al2</label>
+            <description>Ampere Level for Butten Level 2</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="al3">
+            <label>al3</label>
+            <description>Ampere Level for Butten Level 3</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="al4">
+            <label>al4</label>
+            <description>Ampere Level for Butten Level 4</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="al5">
+            <label>al5</label>
+            <description>Ampere Level for Butten Level 5</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="cid">
+            <label>cid</label>
+            <description>Led Color Standby</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="cch">
+            <label>cch</label>
+            <description>Led Color Charging</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="cfi">
+            <label>cfi</label>
+            <description>Led Color Charging Finished</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="lse">
+            <label>lse</label>
+            <description>Led Energy Saver</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="ust">
+            <label>ust</label>
+            <description>Cable Unlock Behavior</description></channel>
+          <channel typeId="genericStringTypeWritable" id="wak">
+            <label>wak</label>
+            <description>Wifi Key/Password</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="r1x">
+            <label>r1x</label>
+            <description>Local HTTP Server Flags</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="dto">
+            <label>dto</label>
+            <description>Time Left in Charge Hours</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="nmo">
+            <label>nmo</label>
+            <description>Norway Mode</description></channel>
+          <channel typeId="genericNumberType" id="eca">
+            <label>eca</label>
+            <description>RFID Card 1 Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ecr">
+            <label>ecr</label>
+            <description>RFID Card 2 Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ecd">
+            <label>ecd</label>
+            <description>RFID Card 3 Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec4">
+            <label>ec4</label>
+            <description>RFID 4 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec5">
+            <label>ec5</label>
+            <description>RFID 5 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec6">
+            <label>ec6</label>
+            <description>RFID 6 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec7">
+            <label>ec7</label>
+            <description>RFID 7 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec8">
+            <label>ec8</label>
+            <description>RFID 8 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec9">
+            <label>ec9</label>
+            <description>RFID 9 Card Charged Energy</description></channel>
+          <channel typeId="genericNumberType" id="ec1">
+            <label>ec1</label>
+            <description>RFID 10 Card Charged Energy</description></channel>
+          <channel typeId="genericStringType" id="rca">
+            <label>rca</label>
+            <description>RFID 1 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rcr">
+            <label>rcr</label>
+            <description>RFID 2 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rcd">
+            <label>rcd</label>
+            <description>RFID 3 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc4">
+            <label>rc4</label>
+            <description>RFID 4 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc5">
+            <label>rc5</label>
+            <description>RFID 5 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc6">
+            <label>rc6</label>
+            <description>RFID 6 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc7">
+            <label>rc7</label>
+            <description>RFID 7 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc8">
+            <label>rc8</label>
+            <description>RFID 8 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc9">
+            <label>rc9</label>
+            <description>RFID 9 Card ID</description></channel>
+          <channel typeId="genericStringType" id="rc1">
+            <label>rc1</label>
+            <description>RFID 10 Card ID</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rna">
+            <label>rna</label>
+            <description>RFID 1 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rnm">
+            <label>rnm</label>
+            <description>RFID 2 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rne">
+            <label>rne</label>
+            <description>RFID 3 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn4">
+            <label>rn4</label>
+            <description>RFID 4 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn5">
+            <label>rn5</label>
+            <description>RFID 5 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn6">
+            <label>rn6</label>
+            <description>RFID 6 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn7">
+            <label>rn7</label>
+            <description>RFID 7 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn8">
+            <label>rn8</label>
+            <description>RFID 8 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn9">
+            <label>rn9</label>
+            <description>RFID 9 Card Name</description></channel>
+          <channel typeId="genericStringTypeWritable" id="rn1">
+            <label>rn1</label>
+            <description>RFID 10 Card Name</description></channel>
+          <channel typeId="genericStringType" id="sch">
+            <label>sch</label>
+            <description>Charging Scheduler</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="r21">
+            <label>r21</label>
+            <description>Scheduler Slot 1 (Write Only)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="r31">
+            <label>r31</label>
+            <description>Scheduler Slot 2 (Write Only)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="r41">
+            <label>r41</label>
+            <description>Scheduler Slot 3 (Write Only)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="sdp">
+            <label>sdp</label>
+            <description>Scheduler Double Press Bypass</description></channel>
+          <channel typeId="genericNumberType" id="upd">
+            <label>upd</label>
+            <description>Update Avail (Only via Cloud)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="cdi">
+            <label>cdi</label>
+            <description>Cloud Disabled</description></channel>
+          <channel typeId="genericNumberType" id="loe">
+            <label>loe</label>
+            <description>Load Management Enabled (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lot">
+            <label>lot</label>
+            <description>Load Management Group Total Ampere (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lom">
+            <label>lom</label>
+            <description>Load Management Minimal Ampere (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lop">
+            <label>lop</label>
+            <description>Load Management Priority (via Cloud)</description></channel>
+          <channel typeId="genericStringType" id="log">
+            <label>log</label>
+            <description>Load Management Group ID (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lon">
+            <label>lon</label>
+            <description>Load Management Expected Group Size (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lof">
+            <label>lof</label>
+            <description>Load Management Fallback Ampere (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="loa">
+            <label>loa</label>
+            <description>Load Management Current Ampere (via Cloud)</description></channel>
+          <channel typeId="genericNumberType" id="lch">
+            <label>lch</label>
+            <description>Load Management Time Since Last Charge (via Cloud)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="mce">
+            <label>mce</label>
+            <description>MQTT Custom Client Enabled (Local)</description></channel>
+          <channel typeId="genericStringTypeWritable" id="mcs">
+            <label>mcs</label>
+            <description>MQTT Custom Client Server Address/Name (Local)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="mcp">
+            <label>mcp</label>
+            <description>MQTT Custom Client Server Port (Local)</description></channel>
+          <channel typeId="genericStringTypeWritable" id="mcu">
+            <label>mcu</label>
+            <description>MQTT Custom Client Username (Local)</description></channel>
+          <channel typeId="genericStringTypeWritable" id="mck">
+            <label>mck</label>
+            <description>MQTT Custom Client Key/Password (Local)</description></channel>
+          <channel typeId="genericNumberType" id="mcc">
+            <label>mcc</label>
+            <description>MQTT Custom Client Connected (Local)</description></channel>
+          <channel typeId="genericNumberTypeWritable" id="rst">
+            <label>rst</label>
+            <description>Reset Charger (Write Only)</description></channel>
+          <channel typeId="genericNumberType" id="txi">
+          	<label>txi</label>
+          	<description>Unknown Number</description></channel>
+		</channels>
+		
+
+    <properties>
+            <property name="Firmware">unknown</property>
+    </properties>
+
+        <representation-property>serialNumber</representation-property>
+
+        <config-description-ref uri="thing-type:goe:httplocal" />
+	</thing-type>
+    <channel-type id="switch" >
+        <item-type>Switch</item-type>
+        <label>Switch ON/OFF</label>
+        <description>Switch an item on or off.</description>
+    </channel-type>
+    <channel-type id="genericNumberType" advanced="true">
+    	<item-type>Number</item-type>
+    	<label>Number value</label>
+    	<state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="genericNumberTypeWritable" advanced="true">
+    	<item-type>Number</item-type>
+    	<label>Number value</label>
+    </channel-type>
+    <channel-type id="genericStringType" advanced="true">
+    	<item-type>String</item-type>
+    	<label>Text value</label>
+    	<state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="genericStringTypeWritable" advanced="true">
+    	<item-type>String</item-type>
+    	<label>Text value</label>
+    </channel-type>
+
+</thing:thing-descriptions>
